@@ -1,6 +1,6 @@
 # Data Structures and Algorithms Practice
 
-This repository is designed to practice and implement various data structures and algorithms using Node.js and TypeScript.
+This repository is designed to practice and implement various data structures and algorithms using NodeJS and TypeScript.
 
 ## Table of Contents
 
@@ -16,7 +16,7 @@ This repository is designed to practice and implement various data structures an
 To get started, clone the repository and install the required dependencies:
 
 ```sh
-git clone
+git clone https://github.com/ASproson/dsa_practice.git
 cd dsa_practice
 npm install
 ```
