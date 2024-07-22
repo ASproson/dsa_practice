@@ -1,4 +1,6 @@
 // npm run test:arrayHash
+// Be sure to remove .skip from relevant describe blocks in arraysAndHashing.test.ts
+
 // git diff main..solutions src/arraysAndHashing.ts
 
 /**
