@@ -1,3 +1,3 @@
-export const sum = () => {
-  return 2 + 2;
+export const hasDuplicate = (nums: number[]): boolean => {
+  return false;
 };
