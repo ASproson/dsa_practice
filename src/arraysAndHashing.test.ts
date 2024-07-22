@@ -14,7 +14,7 @@ describe('hasDuplicate()', () => {
   it('returns true when given array with duplicates', () => {
     expect(hasDuplicate(n1)).toEqual(true);
   });
-  it('returns false when given array with duplicates', () => {
+  it('returns false when given array with no duplicates', () => {
     expect(hasDuplicate(n2)).toEqual(false);
   });
 });
