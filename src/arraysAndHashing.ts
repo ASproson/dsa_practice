@@ -1,1 +1,3 @@
-console.log('hello world');
+export const sum = () => {
+  return 2 + 2;
+};
