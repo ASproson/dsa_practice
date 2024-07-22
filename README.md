@@ -2,15 +2,6 @@
 
 This repository is designed to practice and implement various data structures and algorithms using NodeJS and TypeScript.
 
-## Table of Contents
-
-- [Installation](#installation)
-- [Running Tests](#running-tests)
-  - [Run All Tests](#run-all-tests)
-  - [Run Specific Test File](#run-specific-test-file)
-  - [Run Specific Tests](#run-specific-tests)
-  - [Test Coverage](#test-coverage)
-
 ## Installation
 
 To get started, clone the repository and install the required dependencies:
