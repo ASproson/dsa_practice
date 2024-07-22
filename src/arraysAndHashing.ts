@@ -51,3 +51,25 @@ export const isAnagram = (s: string, t: string): boolean => {
   // If the loop exists without returning, we know we have an anagram
   return true;
 };
+
+/**
+ * @todo Given an array of integers and a target, return the indices of the two nums that equal the target
+ * @param nums number array
+ * @param target number
+ * @returns an array containing the two indices that sum to the target
+ * @satisfies O(n) time and O(n) space
+ */
+export const twoSum = (nums: number[], target: number): number[] => {
+  const map: { [key: number]: number } = {};
+
+  for (let i = 0; i < nums.length; i++) {
+    const curr = nums[i];
+    const diff = target - curr;
+    if (map[diff] !== undefined) {
+      return [map[diff], i];
+    }
+    map[curr] = i;
+  }
+
+  return [-1, -1];
+};

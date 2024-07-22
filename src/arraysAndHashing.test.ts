@@ -37,7 +37,7 @@ describe.skip('isAnagram()', () => {
   });
 });
 
-describe.skip('twoSum()', () => {
+describe('twoSum()', () => {
   const n1 = [3, 4, 5, 6];
   const t1 = 7;
 
