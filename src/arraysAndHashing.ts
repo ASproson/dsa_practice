@@ -57,19 +57,22 @@ export const isAnagram = (s: string, t: string): boolean => {
  * @param nums number array
  * @param target number
  * @returns an array containing the two indices that sum to the target
- * @satisfies O(n) time and O(n) space
+ * @satisfies O(n) time as we potentially traverse the entire nums array, O(n) space as we build a map that could contain the entire array
  */
 export const twoSum = (nums: number[], target: number): number[] => {
-  const map: { [key: number]: number } = {};
+  // Build a map to store numbers for lookup
+  const map: { [key: string]: number } = {};
 
   for (let i = 0; i < nums.length; i++) {
     const curr = nums[i];
     const diff = target - curr;
+    // Need to check for undefined in the case of the value of 0, which can sum to the target
     if (map[diff] !== undefined) {
       return [map[diff], i];
     }
     map[curr] = i;
   }
 
+  // A valid pair is always passed, but a base case here is good practice
   return [-1, -1];
 };
