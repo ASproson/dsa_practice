@@ -1,4 +1,4 @@
-import { hasDuplicate, isAnagram } from './arraysAndHashing';
+import { hasDuplicate, isAnagram, twoSum } from './arraysAndHashing';
 
 /**
  * Select specific describe blocks to run with describe.only
@@ -34,5 +34,26 @@ describe.skip('isAnagram()', () => {
   });
   it('return false when passed strings that are not anagrams', () => {
     expect(isAnagram(s2, t2)).toEqual(false);
+  });
+});
+
+describe.skip('twoSum()', () => {
+  const n1 = [3, 4, 5, 6];
+  const t1 = 7;
+
+  const n2 = [4, 5, 6];
+  const t2 = 10;
+
+  it('returns type object (array)', () => {
+    expect(typeof twoSum(n1, t1)).toEqual('object');
+  });
+  it('returns an array of length 2', () => {
+    expect(twoSum(n1, t1)).toHaveLength(2);
+  });
+  it('returns [0, 1] when given n1, t1', () => {
+    expect(twoSum(n1, t1)).toEqual([0, 1]);
+  });
+  it('returns [0, 2] when given n2, t2', () => {
+    expect(twoSum(n2, t2)).toEqual([0, 2]);
   });
 });
