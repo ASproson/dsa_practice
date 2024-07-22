@@ -1,4 +1,5 @@
 // npm run test:arrayHash
+// Be sure to remove .skip from relevant describe blocks in arraysAndHashing.test.ts
 
 /**
  * @todo Determine whether or not the passed nums array has duplicates in O(n) time
@@ -25,22 +26,28 @@ export const hasDuplicate = (nums: number[]): boolean => {
  * @param s string
  * @param t string
  * @returns boolean based on whether or not passed strings are anagrams
- * @satisfies O(n) time and O(n) space
+ * @satisfies O(n) time as we must traverse both strings entirely, O(n) space as must store each character and its count in a hash map
  */
 export const isAnagram = (s: string, t: string): boolean => {
+  // If the strings are not of equal length, they cannot be anagrams
   if (s.length !== t.length) return false;
 
+  // Anagrams must have equal counts for each character
   const sCount: { [key: string]: number } = {};
   const tCount: { [key: string]: number } = {};
 
   for (let i = 0; i < s.length; i++) {
+    // If character does not exist in map, set it's default to 1
+    // If it does exist, add 1 to it's current count
     sCount[s[i]] = 1 + (sCount[s[i]] || 0);
     tCount[t[i]] = 1 + (tCount[t[i]] || 0);
   }
 
+  // Loop over hash map in order, if the values do not match, it is not an anagram
   for (const key in sCount) {
     if (sCount[key] !== tCount[key]) return false;
   }
 
+  // If the loop exists without returning, we know we have an anagram
   return true;
 };

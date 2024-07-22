@@ -19,7 +19,7 @@ describe.skip('hasDuplicate()', () => {
   });
 });
 
-describe('isAnagram()', () => {
+describe.skip('isAnagram()', () => {
   const s1 = 'racecar';
   const t1 = 'carrace';
 
