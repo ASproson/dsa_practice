@@ -1,4 +1,5 @@
 // npm run test:arrayHash
+// git diff main..solutions src/arraysAndHashing.ts
 
 /**
  * @todo Determine whether or not the passed nums array has duplicates in O(n) time
