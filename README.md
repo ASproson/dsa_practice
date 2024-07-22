@@ -25,3 +25,17 @@ To run specific test files:
 ```sh
 npm run test:arrayHash
 ```
+
+## Viewing Solutions
+
+To view the solutions branch, use:
+
+```sh
+git checkout solutions
+```
+
+Alternatively, you can use the terminal diff:
+
+```sh
+git diff main..solutions src/arraysAndHashing.ts
+```
