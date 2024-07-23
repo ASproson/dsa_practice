@@ -19,8 +19,18 @@ export class ListNode {
  * @todo Reverse the passed linked list (a -> b -> null becomes null -> b -> a)
  * @param head ListNode | null
  * @returns reversed linked list
- * @satisfies O(n) time as we must traverse the entire list, O(1) space as list reversal is done in-place
+ * @satisfies O(n) time, O(1) space
  */
 export const reverseList = (head: ListNodeOrNull): ListNodeOrNull => {
     return null;
+};
+
+/**
+ * @todo Determine whether or not the passed linked list has a cycle
+ * @param head ListNode | null
+ * @returns boolean based on existence of a cycle within the linked list
+ * @satisfies O(n) time, O(1) space
+ */
+export const hasCycle = (head: ListNodeOrNull): boolean => {
+    return false;
 };
