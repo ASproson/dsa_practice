@@ -34,3 +34,17 @@ export const reverseList = (head: ListNodeOrNull): ListNodeOrNull => {
 export const hasCycle = (head: ListNodeOrNull): boolean => {
     return false;
 };
+
+/**
+ * @todo You are given two sorted lists, merge them into a single linked list and return the head of the new merged list
+ * @param list1 ListNodeOrNull
+ * @param list2 ListNodeOrNull
+ * @returns merged linked list from list1 && list2
+ * @satisfies O(n) time, O(n) space
+ */
+export const mergeTwoSortedLists = (
+    list1: ListNodeOrNull,
+    list2: ListNodeOrNull
+): ListNodeOrNull => {
+    return null;
+};
