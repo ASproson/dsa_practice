@@ -8,17 +8,17 @@
  * @satisfies O(n) time as traverse the passed array a maximum of one times in the worst case scenario. O(n) space as we potentially store an entirely unique array in the set
  */
 export const hasDuplicate = (nums: number[]): boolean => {
-  if (nums.length <= 1) return false;
+    if (nums.length <= 1) return false;
 
-  const set = new Set();
-  for (const num of nums) {
-    // O(1) lookup to set
-    if (set.has(num)) return true;
-    // O(1) adding to set
-    set.add(num);
-  }
+    const set = new Set();
+    for (const num of nums) {
+        // O(1) lookup to set
+        if (set.has(num)) return true;
+        // O(1) adding to set
+        set.add(num);
+    }
 
-  return false;
+    return false;
 };
 
 /**
@@ -29,27 +29,27 @@ export const hasDuplicate = (nums: number[]): boolean => {
  * @satisfies O(n) time as we must traverse both strings entirely, O(n) space as must store each character and its count in a hash map
  */
 export const isAnagram = (s: string, t: string): boolean => {
-  // If the strings are not of equal length, they cannot be anagrams
-  if (s.length !== t.length) return false;
+    // If the strings are not of equal length, they cannot be anagrams
+    if (s.length !== t.length) return false;
 
-  // Anagrams must have equal counts for each character
-  const sCount: { [key: string]: number } = {};
-  const tCount: { [key: string]: number } = {};
+    // Anagrams must have equal counts for each character
+    const sCount: { [key: string]: number } = {};
+    const tCount: { [key: string]: number } = {};
 
-  for (let i = 0; i < s.length; i++) {
-    // If character does not exist in map, set it's default to 1
-    // If it does exist, add 1 to it's current count
-    sCount[s[i]] = 1 + (sCount[s[i]] || 0);
-    tCount[t[i]] = 1 + (tCount[t[i]] || 0);
-  }
+    for (let i = 0; i < s.length; i++) {
+        // If character does not exist in map, set it's default to 1
+        // If it does exist, add 1 to it's current count
+        sCount[s[i]] = 1 + (sCount[s[i]] || 0);
+        tCount[t[i]] = 1 + (tCount[t[i]] || 0);
+    }
 
-  // Loop over hash map in order, if the values do not match, it is not an anagram
-  for (const key in sCount) {
-    if (sCount[key] !== tCount[key]) return false;
-  }
+    // Loop over hash map in order, if the values do not match, it is not an anagram
+    for (const key in sCount) {
+        if (sCount[key] !== tCount[key]) return false;
+    }
 
-  // If the loop exists without returning, we know we have an anagram
-  return true;
+    // If the loop exists without returning, we know we have an anagram
+    return true;
 };
 
 /**
@@ -60,19 +60,19 @@ export const isAnagram = (s: string, t: string): boolean => {
  * @satisfies O(n) time as we potentially traverse the entire nums array, O(n) space as we build a map that could contain the entire array
  */
 export const twoSum = (nums: number[], target: number): number[] => {
-  // Build a map to store numbers for lookup
-  const map: { [key: string]: number } = {};
+    // Build a map to store numbers for lookup
+    const map: { [key: string]: number } = {};
 
-  for (let i = 0; i < nums.length; i++) {
-    const curr = nums[i];
-    const diff = target - curr;
-    // Need to check for undefined in the case of the value of 0, which can sum to the target
-    if (map[diff] !== undefined) {
-      return [map[diff], i];
+    for (let i = 0; i < nums.length; i++) {
+        const curr = nums[i];
+        const diff = target - curr;
+        // Need to check for undefined in the case of the value of 0, which can sum to the target
+        if (map[diff] !== undefined) {
+            return [map[diff], i];
+        }
+        map[curr] = i;
     }
-    map[curr] = i;
-  }
 
-  // A valid pair is always passed, but a base case here is good practice
-  return [-1, -1];
+    // A valid pair is always passed, but a base case here is good practice
+    return [-1, -1];
 };
