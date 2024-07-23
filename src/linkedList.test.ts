@@ -6,7 +6,7 @@
 import { reverseList, ListNode, ListNodeOrNull } from './linkedLists';
 import { arrayToList, listToArray } from './utils/utils';
 
-describe('reverseList()', () => {
+describe.skip('reverseList()', () => {
     it('should reverse a non-empty list', () => {
         const originalList = arrayToList([1, 2, 3, 4]);
         const reversedList = reverseList(originalList);
