@@ -66,3 +66,44 @@ export const hasCycle = (head: ListNodeOrNull): boolean => {
     // Loop has completed because we reached the end of the list and hit a null, therefore no cycle is present
     return false;
 };
+
+/**
+ * @todo You are given two sorted lists, merge them into a single linked list and return the head of the new merged list
+ * @param list1 ListNodeOrNull
+ * @param list2 ListNodeOrNull
+ * @returns merged linked list from list1 && list2
+ * @satisfies O(n) time as we must traverse the longest list, O(n) space as we must create a new list
+ */
+export const mergeTwoSortedLists = (
+    list1: ListNodeOrNull,
+    list2: ListNodeOrNull
+): ListNodeOrNull => {
+    // Create a dummy node to serve as the starting point of the merged list
+    const dummy = new ListNode();
+    let curr = dummy; // This will be used to build the new list
+
+    // Traverse both lists and append the smaller node to the merged list
+    while (list1 && list2) {
+        if (list1.val < list2.val) {
+            curr.next = list1;
+            list1 = list1.next;
+        } else {
+            curr.next = list2;
+            list2 = list2.next;
+        }
+        curr = curr.next; // Move to the next node in the merged list
+    }
+
+    // Append any remaining nodes from either list
+    // if (list1) {
+    //     curr.next = list1;
+    // } else if (list2) {
+    //     curr.next = list2;
+    // }
+
+    if (!list1) curr.next = list2;
+    if (!list2) curr.next = list1;
+
+    // Return the merged list, starting from the node after the dummy
+    return dummy.next;
+};
