@@ -10,7 +10,7 @@
  * @satisfies O(n) time and O(n) space
  */
 export const hasDuplicate = (nums: number[]): boolean => {
-  return false;
+    return false;
 };
 
 /**
@@ -21,7 +21,7 @@ export const hasDuplicate = (nums: number[]): boolean => {
  * @satisfies O(n) time and O(n) space
  */
 export const isAnagram = (s: string, t: string): boolean => {
-  return false;
+    return false;
 };
 
 /**
@@ -32,5 +32,5 @@ export const isAnagram = (s: string, t: string): boolean => {
  * @satisfies O(n) time and O(n) space
  */
 export const twoSum = (nums: number[], target: number): number[] => {
-  return [-1, -1];
+    return [-1, -1];
 };

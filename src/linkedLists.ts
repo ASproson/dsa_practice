@@ -8,23 +8,25 @@
  */
 export type ListNodeOrNull = ListNode | null;
 export class ListNode {
-  val: number;
-  next: ListNodeOrNull;
-  constructor(val = 0, next = null) {
-    (this.val = val), (this.next = next);
-  }
+    val: number;
+    next: ListNodeOrNull;
+    constructor(val = 0, next = null) {
+        (this.val = val), (this.next = next);
+    }
 }
 
 export const reverseList = (head: ListNodeOrNull): ListNodeOrNull => {
-  let curr: ListNodeOrNull = head;
-  let prev: ListNodeOrNull = null;
+    // We first need to store
 
-  while (curr) {
-    const nextNode: ListNodeOrNull = curr.next;
-    curr.next = prev;
-    prev = curr;
-    curr = nextNode;
-  }
+    let curr: ListNodeOrNull = head;
+    let prev: ListNodeOrNull = null;
 
-  return prev;
+    while (curr) {
+        const nextNode: ListNodeOrNull = curr.next;
+        curr.next = prev;
+        prev = curr;
+        curr = nextNode;
+    }
+
+    return prev;
 };
