@@ -3,7 +3,13 @@
  * Select specific it blocks to run with it.only
  */
 
-import { reverseList, ListNode, ListNodeOrNull, hasCycle } from './linkedLists';
+import {
+    reverseList,
+    ListNode,
+    ListNodeOrNull,
+    hasCycle,
+    mergeTwoSortedLists,
+} from './linkedLists';
 import { arrayToList, listToArray } from './utils/utils';
 
 describe.skip('reverseList()', () => {
@@ -71,5 +77,42 @@ describe.skip('hasCycle()', () => {
         node3.next = node2; // Creates a cycle
 
         expect(hasCycle(node1)).toBe(true);
+    });
+});
+
+describe.skip('mergeTwoSortedLists()', () => {
+    it('should return null when both lists are empty', () => {
+        const list1: ListNode | null = null;
+        const list2: ListNode | null = null;
+        const mergedList = mergeTwoSortedLists(list1, list2);
+        expect(listToArray(mergedList)).toEqual([]);
+    });
+
+    it('should return the non-empty list when one list is empty', () => {
+        const list1 = null;
+        const list2 = arrayToList([1, 2, 3]);
+        const mergedList = mergeTwoSortedLists(list1, list2);
+        expect(listToArray(mergedList)).toEqual([1, 2, 3]);
+    });
+
+    it('should merge two non-empty lists without overlap', () => {
+        const list1 = arrayToList([1, 3, 5]);
+        const list2 = arrayToList([2, 4, 6]);
+        const mergedList = mergeTwoSortedLists(list1, list2);
+        expect(listToArray(mergedList)).toEqual([1, 2, 3, 4, 5, 6]);
+    });
+
+    it('should merge two non-empty lists with some overlapping values', () => {
+        const list1 = arrayToList([1, 4, 5]);
+        const list2 = arrayToList([2, 3, 5, 6]);
+        const mergedList = mergeTwoSortedLists(list1, list2);
+        expect(listToArray(mergedList)).toEqual([1, 2, 3, 4, 5, 5, 6]);
+    });
+
+    it('should merge lists of different lengths', () => {
+        const list1 = arrayToList([1, 3]);
+        const list2 = arrayToList([2, 4, 5, 6]);
+        const mergedList = mergeTwoSortedLists(list1, list2);
+        expect(listToArray(mergedList)).toEqual([1, 2, 3, 4, 5, 6]);
     });
 });
