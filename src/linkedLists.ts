@@ -43,3 +43,26 @@ export const reverseList = (head: ListNodeOrNull): ListNodeOrNull => {
     // Once the loop is complete, prev now points to the new head of the reversed list
     return prev;
 };
+
+/**
+ * @todo Determine whether or not the passed linked list has a cycle
+ * @param head ListNode | null
+ * @returns boolean based on existence of a cycle within the linked list
+ * @satisfies O(n) time as we must traverse the entire list, O(1) space as we check for a cycle in memory
+ */
+export const hasCycle = (head: ListNodeOrNull): boolean => {
+    // Create two pointers that reference head, they will move at different speeds
+    let fast = head;
+    let slow = head;
+    // whilst fast and fast.next are not null, loop
+    while (fast && fast.next) {
+        // Advance slow one node at a time
+        slow = slow!.next;
+        // Advance fast two nodes at a time
+        fast = fast.next.next;
+        // If the pointers ever overlap, then their values will be the same; indicating we have a cycle
+        if (slow === fast) return true;
+    }
+    // Loop has completed because we reached the end of the list and hit a null, therefore no cycle is present
+    return false;
+};
