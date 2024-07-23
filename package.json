@@ -6,7 +6,8 @@
   "scripts": {
     "test": "jest",
     "test:watch": "jest --watch",
-    "test:arrayHash": "jest src/arraysAndHashing.test.ts"
+    "test:arrayHash": "jest src/arraysAndHashing.test.ts",
+    "test:linkedList": "jest src/linkedList.test.ts"
   },
   "keywords": [],
   "author": "",
